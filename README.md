@@ -40,26 +40,34 @@ Let's create a new file to manipulate and clean, it will have no effect on the o
 		membership_date VARCHAR(50));
 ```
 
-Copy all values from the original table
+- Copy all values from the original table
 
 ```sql
 	INSERT INTO club_member_info_cleaned
 	SELECT * FROM club_member_info;
 ```
 
-
 ### Start Cleaning & Manipulation
-
-
-Trim spaces in full_name
+- Trim spaces in full_name
 ```sql
 	UPDATE club_member_info_cleaned 
 	SET full_name = TRIM(full_name);
 ```
 
-
-Update Upper Letter from full_name
+- Update Upper Letter from full_name
 ```sql
 	UPDATE club_member_info_cleaned 
 	SET full_name = UPPER(full_name);
+```
+- Update all club_member who do not have info about martial_status to 'N/a'
+```sql
+	UPDATE club_member_info_cleaned 
+	SET martial_status = 'N/a' 
+	WHERE martial_status = '';
+```
+- Update all club_member who do not have info about job_title to 'N/a'
+```sql
+	UPDATE club_member_info_cleaned 
+	SET job_title = 'N/a' 
+	WHERE job_title = '';
 ```
