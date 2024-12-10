@@ -71,3 +71,11 @@ Let's create a new file to manipulate and clean, it will have no effect on the o
 	SET job_title = 'N/a' 
 	WHERE job_title = '';
 ```
+### Final Results Overview
+|full_name|age|martial_status|email|phone|full_address|job_title|membership_date|
+|---------|---|--------------|-----|-----|------------|---------|---------------|
+|ADDIE LUSH|40|married|alush0@shutterfly.com|254-389-8708|3226 Eastlawn Pass,Temple,Texas|Assistant Professor|7/31/2013|
+|ROCK CRADICK|46|married|rcradick1@newsvine.com|910-566-2007|4 Harbort Avenue,Fayetteville,North Carolina|Programmer III|5/27/2018|
+|SYDEL SHARVELL|46|divorced|ssharvell2@amazon.co.jp|702-187-8715|4 School Place,Las Vegas,Nevada|Budget/Accounting Analyst I|10/6/2017|
+|CONSTANTIN DE LA CRUZ|35|N/a|co3@bloglines.com|402-688-7162|6 Monument Crossing,Omaha,Nebraska|N/a|10/20/2015|
+|GAYLOR REDHOLE|38|married|gredhole4@japanpost.jp|917-394-6001|88 Cherokee Pass,New York City,New York|Legal Assistant|5/29/2019|
