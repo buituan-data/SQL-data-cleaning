@@ -2,6 +2,8 @@
 SCA_learning for the first project:
 This is an educational project on data cleaning and preparation using SQL. The original database in CSV format is located in the file club_member_info.csv. Here, we will explore the steps that need to be applied to obtain a cleansed version of the dataset.
 
+### Data Overview
+
 ```sql
 SELECT * FROM club_member_info LIMIT 10;
 ```
@@ -21,37 +23,43 @@ SELECT * FROM club_member_info LIMIT 10;
 | fey kloss|52|married|fkloss9@godaddy.com|808-177-0318|8976 Jackson Park,Honolulu,Hawaii|Chemical Engineer|11/5/2014|
 
 
-# Create a new file for cleaning
+### Create a new file for cleaning
 Let's create a new file to manipulate and clean, it will have no effect on the original data
 
-**Create new tables depend on the original table**
+
+- Create new tables depend on the original table
 ```sql
-CREATE TABLE club_member_info_cleaned (
-	full_name VARCHAR(50),
-	age INTEGER,
-	martial_status VARCHAR(50),
-	email VARCHAR(50),
-	phone VARCHAR(50),
-	full_address VARCHAR(50),
-	job_title VARCHAR(50),
-	membership_date VARCHAR(50));
+	CREATE TABLE club_member_info_cleaned (
+		full_name VARCHAR(50),
+		age INTEGER,
+		martial_status VARCHAR(50),
+		email VARCHAR(50),
+		phone VARCHAR(50),
+		full_address VARCHAR(50),
+		job_title VARCHAR(50),
+		membership_date VARCHAR(50));
 ```
 
-**Copy all values from the original table**
+Copy all values from the original table
 
 ```sql
-INSERT INTO club_member_info_cleaned
-SELECT * FROM club_member_info;
+	INSERT INTO club_member_info_cleaned
+	SELECT * FROM club_member_info;
 ```
 
-**Trim spaces in 'full_name'**
+
+### Start Cleaning & Manipulation
+
+
+Trim spaces in full_name
 ```sql
-UPDATE club_member_info_cleaned 
-SET full_name = TRIM(full_name);
+	UPDATE club_member_info_cleaned 
+	SET full_name = TRIM(full_name);
 ```
 
-**Update Upper Letter from full_name**
+
+Update Upper Letter from full_name
 ```sql
-UPDATE club_member_info_cleaned 
-SET full_name = UPPER(full_name);
+	UPDATE club_member_info_cleaned 
+	SET full_name = UPPER(full_name);
 ```
